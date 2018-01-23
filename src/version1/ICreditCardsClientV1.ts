@@ -8,7 +8,7 @@ export interface ICreditCardsClientV1 {
     getCreditCards(correlationId: string, filter: FilterParams, paging: PagingParams, 
         callback: (err: any, page: DataPage<CreditCardV1>) => void): void;
 
-    getCreditCardById(correlationId: string, cardId: string, 
+    getCreditCardById(correlationId: string, cardId: string, customerId: string,
         callback: (err: any, card: CreditCardV1) => void): void;
 
     createCreditCard(correlationId: string, card: CreditCardV1, 
@@ -17,6 +17,6 @@ export interface ICreditCardsClientV1 {
     updateCreditCard(correlationId: string, card: CreditCardV1, 
         callback: (err: any, card: CreditCardV1) => void): void;
 
-    deleteCreditCardById(correlationId: string, cardId: string,
+    deleteCreditCardById(correlationId: string, cardId: string, customerId: string,
         callback: (err: any, card: CreditCardV1) => void): void;
 }

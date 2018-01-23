@@ -8,36 +8,36 @@ class CreditCardsDirectClientV1 extends pip_services_net_node_1.DirectClient {
         this._dependencyResolver.put('controller', new pip_services_commons_node_1.Descriptor("pip-services-creditcards", "controller", "*", "*", "*"));
     }
     getCreditCards(correlationId, filter, paging, callback) {
-        let timing = this.instrument(correlationId, 'creditcards.get_creditcards');
+        let timing = this.instrument(correlationId, 'credit_cards.get_credit_cards');
         this._controller.getCreditCards(correlationId, filter, paging, (err, page) => {
             timing.endTiming();
             callback(err, page);
         });
     }
-    getCreditCardById(correlationId, cardId, callback) {
-        let timing = this.instrument(correlationId, 'creditcards.get_creditcard_by_id');
-        this._controller.getCreditCardById(correlationId, cardId, (err, card) => {
+    getCreditCardById(correlationId, cardId, customerId, callback) {
+        let timing = this.instrument(correlationId, 'credit_cards.get_credit_card_by_id');
+        this._controller.getCreditCardById(correlationId, cardId, customerId, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });
     }
     createCreditCard(correlationId, card, callback) {
-        let timing = this.instrument(correlationId, 'creditcards.create_creditcard');
+        let timing = this.instrument(correlationId, 'credit_cards.create_credit_card');
         this._controller.createCreditCard(correlationId, card, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });
     }
     updateCreditCard(correlationId, card, callback) {
-        let timing = this.instrument(correlationId, 'creditcards.update_creditcard');
+        let timing = this.instrument(correlationId, 'credit_cards.update_credit_card');
         this._controller.updateCreditCard(correlationId, card, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });
     }
-    deleteCreditCardById(correlationId, cardId, callback) {
-        let timing = this.instrument(correlationId, 'creditcards.delete_creditcard_by_id');
-        this._controller.deleteCreditCardById(correlationId, cardId, (err, card) => {
+    deleteCreditCardById(correlationId, cardId, customerId, callback) {
+        let timing = this.instrument(correlationId, 'credit_cards.delete_credit_card_by_id');
+        this._controller.deleteCreditCardById(correlationId, cardId, customerId, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });

@@ -62,7 +62,7 @@ export class CreditCardsClientFixtureV1 {
         let creditCard1, creditCard2: CreditCardV1;
 
         async.series([
-        // Create one creditcard
+        // Create one credit_card
             (callback) => {
                 this._client.createCreditCard(
                     null,
@@ -81,7 +81,7 @@ export class CreditCardsClientFixtureV1 {
                     }
                 );
             },
-        // Create another creditcard
+        // Create another credit_card
             (callback) => {
                 this._client.createCreditCard(
                     null,
@@ -100,7 +100,7 @@ export class CreditCardsClientFixtureV1 {
                     }
                 );
             },
-        // Get all creditcards
+        // Get all credit_cards
             (callback) => {
                 this._client.getCreditCards(
                     null,
@@ -116,7 +116,7 @@ export class CreditCardsClientFixtureV1 {
                     }
                 );
             },
-        // Update the creditcard
+        // Update the credit_card
             (callback) => {
                 creditCard1.name = 'Updated Card 1';
 
@@ -136,11 +136,12 @@ export class CreditCardsClientFixtureV1 {
                     }
                 );
             },
-        // Delete creditcard
+        // Delete credit_card
             (callback) => {
                 this._client.deleteCreditCardById(
                     null,
                     creditCard1.id,
+                    creditCard1.customer_id,
                     (err) => {
                         assert.isNull(err);
 
@@ -148,11 +149,12 @@ export class CreditCardsClientFixtureV1 {
                     }
                 );
             },
-        // Try to get delete creditcard
+        // Try to get delete credit_card
             (callback) => {
                 this._client.getCreditCardById(
                     null,
                     creditCard1.id,
+                    creditCard1.customer_id,
                     (err, creditCard) => {
                         assert.isNull(err);
                         

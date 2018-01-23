@@ -13,7 +13,7 @@
     "typings": "./obj/src/index.d.ts",
     "keywords": [
         "pip.services",
-        "creditcards",
+        "credit_cards",
         "microservice",
         "client",
         "sdk"

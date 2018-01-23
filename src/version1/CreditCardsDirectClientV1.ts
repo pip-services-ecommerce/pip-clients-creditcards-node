@@ -18,17 +18,17 @@ export class CreditCardsDirectClientV1 extends DirectClient<any> implements ICre
 
     public getCreditCards(correlationId: string, filter: FilterParams, paging: PagingParams, 
         callback: (err: any, page: DataPage<CreditCardV1>) => void): void {
-        let timing = this.instrument(correlationId, 'creditcards.get_creditcards');
+        let timing = this.instrument(correlationId, 'credit_cards.get_credit_cards');
         this._controller.getCreditCards(correlationId, filter, paging, (err, page) => {
             timing.endTiming();
             callback(err, page);
         });
     }
 
-    public getCreditCardById(correlationId: string, cardId: string, 
-        callback: (err: any, creditcard: CreditCardV1) => void): void {
-        let timing = this.instrument(correlationId, 'creditcards.get_creditcard_by_id');
-        this._controller.getCreditCardById(correlationId, cardId, (err, card) => {
+    public getCreditCardById(correlationId: string, cardId: string, customerId: string,
+        callback: (err: any, credit_card: CreditCardV1) => void): void {
+        let timing = this.instrument(correlationId, 'credit_cards.get_credit_card_by_id');
+        this._controller.getCreditCardById(correlationId, cardId, customerId, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });
@@ -36,7 +36,7 @@ export class CreditCardsDirectClientV1 extends DirectClient<any> implements ICre
 
     public createCreditCard(correlationId: string, card: CreditCardV1, 
         callback: (err: any, card: CreditCardV1) => void): void {
-        let timing = this.instrument(correlationId, 'creditcards.create_creditcard');
+        let timing = this.instrument(correlationId, 'credit_cards.create_credit_card');
         this._controller.createCreditCard(correlationId, card, (err, card) => {
             timing.endTiming();
             callback(err, card);
@@ -45,17 +45,17 @@ export class CreditCardsDirectClientV1 extends DirectClient<any> implements ICre
 
     public updateCreditCard(correlationId: string, card: CreditCardV1, 
         callback: (err: any, card: CreditCardV1) => void): void {
-        let timing = this.instrument(correlationId, 'creditcards.update_creditcard');
+        let timing = this.instrument(correlationId, 'credit_cards.update_credit_card');
         this._controller.updateCreditCard(correlationId, card, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });
     }
 
-    public deleteCreditCardById(correlationId: string, cardId: string,
+    public deleteCreditCardById(correlationId: string, cardId: string, customerId: string,
         callback: (err: any, card: CreditCardV1) => void): void {
-        let timing = this.instrument(correlationId, 'creditcards.delete_creditcard_by_id');
-        this._controller.deleteCreditCardById(correlationId, cardId, (err, card) => {
+        let timing = this.instrument(correlationId, 'credit_cards.delete_credit_card_by_id');
+        this._controller.deleteCreditCardById(correlationId, cardId, customerId, (err, card) => {
             timing.endTiming();
             callback(err, card);
         });

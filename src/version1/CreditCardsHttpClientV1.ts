@@ -11,7 +11,7 @@ import { ICreditCardsClientV1 } from './ICreditCardsClientV1';
 export class CreditCardsHttpClientV1 extends CommandableHttpClient implements ICreditCardsClientV1 {       
     
     constructor(config?: any) {
-        super('creditcards');
+        super('credit_cards');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
@@ -20,7 +20,7 @@ export class CreditCardsHttpClientV1 extends CommandableHttpClient implements IC
     public getCreditCards(correlationId: string, filter: FilterParams, paging: PagingParams,
         callback: (err: any, page: DataPage<CreditCardV1>) => void): void {
         this.callCommand( 
-            'get_creditcards', 
+            'get_credit_cards', 
             correlationId,
             {
                 filter: filter,
@@ -30,13 +30,14 @@ export class CreditCardsHttpClientV1 extends CommandableHttpClient implements IC
         );
     }
 
-    public getCreditCardById(correlationId: string, cardId: string,
+    public getCreditCardById(correlationId: string, cardId: string, customerId: string,
         callback: (err: any, card: CreditCardV1) => void): void {
         this.callCommand( 
-            'get_creditcard_by_id',
+            'get_credit_card_by_id',
             correlationId,
             {
-                card_id: cardId
+                card_id: cardId,
+                customer_id: customerId
             }, 
             callback
         );        
@@ -45,7 +46,7 @@ export class CreditCardsHttpClientV1 extends CommandableHttpClient implements IC
     public createCreditCard(correlationId: string, card: CreditCardV1,
         callback: (err: any, card: CreditCardV1) => void): void {
         this.callCommand(
-            'create_creditcard',
+            'create_credit_card',
             correlationId,
             {
                 card: card
@@ -57,7 +58,7 @@ export class CreditCardsHttpClientV1 extends CommandableHttpClient implements IC
     public updateCreditCard(correlationId: string, card: CreditCardV1,
         callback: (err: any, card: CreditCardV1) => void): void {
         this.callCommand(
-            'update_creditcard', 
+            'update_credit_card', 
             correlationId,
             {
                 card: card
@@ -66,13 +67,14 @@ export class CreditCardsHttpClientV1 extends CommandableHttpClient implements IC
         );
     }
 
-    public deleteCreditCardById(correlationId: string, cardId: string,
+    public deleteCreditCardById(correlationId: string, cardId: string, customerId: string,
         callback: (err: any, card: CreditCardV1) => void): void {
         this.callCommand(
-            'delete_creditcard_by_id', 
+            'delete_credit_card_by_id', 
             correlationId,
             {
-                card_id: cardId
+                card_id: cardId,
+                customer_id: customerId
             }, 
             callback
         );
