@@ -11,7 +11,7 @@ import { ICreditCardsClientV1 } from './ICreditCardsClientV1';
 export class CreditCardsHttpClientV1 extends CommandableHttpClient implements ICreditCardsClientV1 {       
     
     constructor(config?: any) {
-        super('credit_cards');
+        super('v1/credit_cards');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
