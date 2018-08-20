@@ -1,5 +1,5 @@
 import { Descriptor } from 'pip-services-commons-node';
-import { Factory } from 'pip-services-commons-node';
+import { Factory } from 'pip-services-components-node';
 
 import { CreditCardsDirectClientV1 } from '../version1/CreditCardsDirectClientV1';
 import { CreditCardsHttpClientV1 } from '../version1/CreditCardsHttpClientV1';

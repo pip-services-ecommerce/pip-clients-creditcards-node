@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
+const pip_services_components_node_1 = require("pip-services-components-node");
 const CreditCardsDirectClientV1_1 = require("../version1/CreditCardsDirectClientV1");
 const CreditCardsHttpClientV1_1 = require("../version1/CreditCardsHttpClientV1");
 const CreditCardsSenecaClientV1_1 = require("../version1/CreditCardsSenecaClientV1");
 const CreditCardsLambdaClientV1_1 = require("../version1/CreditCardsLambdaClientV1");
-class CreditCardsClientFactory extends pip_services_commons_node_2.Factory {
+class CreditCardsClientFactory extends pip_services_components_node_1.Factory {
     constructor() {
         super();
         this.registerAsType(CreditCardsClientFactory.DirectClientV1Descriptor, CreditCardsDirectClientV1_1.CreditCardsDirectClientV1);
