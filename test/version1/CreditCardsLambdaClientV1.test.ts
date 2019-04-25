@@ -1,6 +1,6 @@
 let process = require('process');
 
-import { ConfigParams } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 
 import { CreditCardsClientFixtureV1 } from './CreditCardsClientFixtureV1';
 import { CreditCardsLambdaClientV1 } from '../../src/version1/CreditCardsLambdaClientV1';

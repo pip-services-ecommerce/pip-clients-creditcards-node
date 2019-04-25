@@ -2,7 +2,7 @@ let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
-import { PagingParams } from 'pip-services-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
 
 import { CreditCardV1 } from '../../src/version1/CreditCardV1';
 import { CreditCardTypeV1 } from '../../src/version1/CreditCardTypeV1';
